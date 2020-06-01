@@ -63,7 +63,8 @@ MOUSE MOVEMENTS 501 571
 MOUSE MOVEMENTS 733 362
 MOUSE MOVEMENTS 749 164
 ```
-### [Subject](src/subject.html) - with operators `take`, `filter`, `map`
+
+### [Subject](src/subject.html)
 
 Simple example rxjs with no operators
 
@@ -81,4 +82,29 @@ Console output
 Subject Subscription 1 Message 1
 Subject Subscription 2 Message 1
 Subject Subscription 3 Message 1
+```
+
+### [Behavior Subject](src/behavior.html)`filter`, `map`
+
+Simple example rxjs with no operators
+
+```typescript
+const behaviorSubject = new rxjs.BehaviorSubject('Message');
+behaviorSubject.subscribe((e) => console.log('Behaviour Subject Subscription 1', e));
+behaviorSubject.subscribe((e) => console.log('Behaviour Subject Subscription 2', e));
+behaviorSubject.next('Message 1');
+behaviorSubject.next('Message 2');
+behaviorSubject.subscribe((e) => console.log('Behaviour Subject Subscription 3', e));
+```
+
+Console output
+
+```console
+Behaviour Subject Subscription 1 Message
+Behaviour Subject Subscription 2 Message
+Behaviour Subject Subscription 1 Message 1
+Behaviour Subject Subscription 2 Message 1
+Behaviour Subject Subscription 1 Message 2
+Behaviour Subject Subscription 2 Message 2
+Behaviour Subject Subscription 3 Message 2
 ```

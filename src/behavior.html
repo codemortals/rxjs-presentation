@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+    <head>
+        <script src="https://unpkg.com/@reactivex/rxjs@6.5.5/dist/global/rxjs.umd.js"></script>
+    </head>
+    <body>
+        <script>
+            // behaviour subject
+            const behaviorSubject = new rxjs.BehaviorSubject('Message');
+            behaviorSubject.subscribe((e) => console.log('Behaviour Subject Subscription 1', e));
+            behaviorSubject.subscribe((e) => console.log('Behaviour Subject Subscription 2', e));
+            behaviorSubject.next('Message 1');
+            behaviorSubject.next('Message 2');
+            behaviorSubject.subscribe((e) => console.log('Behaviour Subject Subscription 3', e));
+        </script>
+    </body>
+</html>
