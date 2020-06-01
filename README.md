@@ -68,11 +68,11 @@ MOUSE MOVEMENTS 749 164
 Simple example rxjs with no operators
 
 ```typescript
-rxjs.range(1, 200)
-  .pipe(
-      // ...
-  )
-  .subscribe((x) => console.log('output:', x));
+const subject = new rxjs.Subject();
+subject.subscribe((e) => console.log('Subject Subscription 1', e));
+subject.subscribe((e) => console.log('Subject Subscription 2', e));
+subject.subscribe((e) => console.log('Subject Subscription 3', e));
+subject.next('Message 1');
 ```
 
 Console output
