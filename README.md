@@ -84,7 +84,7 @@ Subject Subscription 2 Message 1
 Subject Subscription 3 Message 1
 ```
 
-### [Behavior Subject](src/behavior.html)`filter`, `map`
+### [Behavior Subject](src/behavior.html)
 
 Simple example rxjs with no operators
 
@@ -107,4 +107,35 @@ Behaviour Subject Subscription 2 Message 1
 Behaviour Subject Subscription 1 Message 2
 Behaviour Subject Subscription 2 Message 2
 Behaviour Subject Subscription 3 Message 2
+```
+
+### [Replay Subject](src/replay.html)
+
+Simple example rxjs with no operators
+
+```typescript
+const replaySubject = new rxjs.ReplaySubject(3);
+replaySubject.subscribe((e) => console.log('Replay Subject Subscription 1', e));
+replaySubject.subscribe((e) => console.log('Replay Subject Subscription 2', e));
+replaySubject.next('Message 1');
+replaySubject.next('Message 2');
+replaySubject.next('Message 3');
+replaySubject.next('Message 4');
+replaySubject.subscribe((e) => console.log('Replay Subject Subscription 3', e));
+```
+
+Console output
+
+```console
+Replay Subject Subscription 1 Message 1
+Replay Subject Subscription 2 Message 1
+Replay Subject Subscription 1 Message 2
+Replay Subject Subscription 2 Message 2
+Replay Subject Subscription 1 Message 3
+Replay Subject Subscription 2 Message 3
+Replay Subject Subscription 1 Message 4
+Replay Subject Subscription 2 Message 4
+Replay Subject Subscription 3 Message 2
+Replay Subject Subscription 3 Message 3
+Replay Subject Subscription 3 Message 4
 ```
