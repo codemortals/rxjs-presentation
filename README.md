@@ -24,7 +24,7 @@ output: 3
 output: 200
 ```
 
-### [Click event](src/click.html) - with `takeUntil`
+### [Click event](src/click.html) - with operators `takeUntil`
 
 Simple example rxjs with no operators
 
@@ -44,7 +44,7 @@ MOUSE CLICKS 18 16
 MOUSE CLICKS 12 16
 MOUSE CLICKS 29 16
 ```
-### [Mouse movement](src/mouse.html) - with `filter`, `throttleTime`, `map`
+### [Mouse movement](src/mouse.html) - with operators `filter`, `throttleTime`, `map`
 
 Simple example rxjs with no operators
 
@@ -59,5 +59,26 @@ rxjs.fromEvent(document, 'mousemove')
 Console output
 
 ```console
+MOUSE MOVEMENTS 501 571
+MOUSE MOVEMENTS 733 362
+MOUSE MOVEMENTS 749 164
+```
+### [Subject](src/subject.html) - with operators `take`, `filter`, `map`
 
+Simple example rxjs with no operators
+
+```typescript
+rxjs.range(1, 200)
+  .pipe(
+      // ...
+  )
+  .subscribe((x) => console.log('output:', x));
+```
+
+Console output
+
+```console
+Subject Subscription 1 Message 1
+Subject Subscription 2 Message 1
+Subject Subscription 3 Message 1
 ```

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+    <head>
+        <script src="https://unpkg.com/@reactivex/rxjs@6.5.5/dist/global/rxjs.umd.js"></script>
+    </head>
+    <body>
+        <script>
+            // subject
+            const subject = new rxjs.Subject();
+            subject.subscribe((e) => console.log('Subject Subscription 1', e));
+            subject.subscribe((e) => console.log('Subject Subscription 2', e));
+            subject.subscribe((e) => console.log('Subject Subscription 3', e));
+            subject.next('Message 1');
+        </script>
+    </body>
+</html>

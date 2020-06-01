@@ -11,7 +11,7 @@
                     rxjs.operators.filter(x => x % 2), // remove unwanted values
                     rxjs.operators.map(x => x + x) // map the data
                 )
-                .subscribe(x => console.log('output:', x));
+                .subscribe((x) => console.log('output:', x));
         </script>
     </body>
 </html>
