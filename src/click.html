@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+    <head>
+        <script src="https://unpkg.com/@reactivex/rxjs@6.5.5/dist/global/rxjs.umd.js"></script>
+    </head>
+    <body>
+        <button id="go">GO</button>
+        <button id="stop">Stop</button>
+        <script>
+            // click event
+            let buttonGo = document.querySelector('button#go');
+            let buttonStop = document.querySelector('button#stop');
+            rxjs.fromEvent(buttonGo, 'click')
+                .pipe(
+                    rxjs.operators.takeUntil(rxjs.fromEvent(buttonStop, 'click')),
+                )
+                .subscribe((e) => console.log('MOUSE CLICKS', e.clientX, e.clientY));
+        </script>
+    </body>
+</html>
