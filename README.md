@@ -2,7 +2,7 @@
 
 ## Examples
 
-- [Range](src/range.html) - increment and use operators like `take`, `filter`, `map`
+### [Range](src/range.html) - increment and use operators like `take`, `filter`, `map`
 
 Console output
 
@@ -14,7 +14,7 @@ output: 3
 output: 200
 ```
 
-- [Click event](src/click.html) - with `takeUntil`
+### [Click event](src/click.html) - with `takeUntil`
 
 Console output
 
