@@ -8,6 +8,9 @@ Simple example rxjs with no operators
 
 ```typescript
 rxjs.range(1, 200)
+  .pipe(
+      // ...
+  )
   .subscribe(x => console.log('output:', x));
 ```
 
@@ -27,6 +30,9 @@ Simple example rxjs with no operators
 
 ```typescript
 rxjs.fromEvent(buttonGo, 'click')
+  .pipe(
+      // ...
+  )
   .subscribe((e) => console.log('MOUSE CLICKS', e.clientX, e.clientY));
 ```
 
@@ -37,4 +43,21 @@ MOUSE CLICKS 28 26
 MOUSE CLICKS 18 16
 MOUSE CLICKS 12 16
 MOUSE CLICKS 29 16
+```
+### [Mouse movement](src/mouse.html) - with `filter`, `throttleTime`, `map`
+
+Simple example rxjs with no operators
+
+```typescript
+rxjs.fromEvent(document, 'mousemove')
+  .pipe(
+      // ...
+  )
+  .subscribe((e) => console.log('MOUSE MOVEMENTS', e.x, e.y));
+```
+
+Console output
+
+```console
+
 ```

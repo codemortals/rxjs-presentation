@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+    <head>
+        <script src="https://unpkg.com/@reactivex/rxjs@6.5.5/dist/global/rxjs.umd.js"></script>
+    </head>
+    <body>
+        <script>
+            // mousemove event
+            rxjs.fromEvent(document, 'mousemove')
+                .pipe(
+                    rxjs.operators.filter((e) => e.clientX > 500),
+                    rxjs.operators.throttleTime(500),
+                    rxjs.operators.map((e) => ({ x: e.clientX, y: e.clientY })),
+                )
+                .subscribe((e) => console.log('MOUSE MOVEMENTS', e.x, e.y));
+        </script>
+    </body>
+</html>
